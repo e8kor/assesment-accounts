@@ -1,0 +1,11 @@
+*.pyc 
+
+# Intellij
+*.iml
+.idea
+project/target
+project/project
+
+# sbt build
+target/
+
