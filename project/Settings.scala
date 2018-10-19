@@ -10,14 +10,8 @@ object Settings {
     inThisBuild(Seq(
       organization := "accounts",
       scalaVersion := "2.12.6",
-      parallelExecution := false,
       javaOptions ++= Seq(
         "-XX:+CMSClassUnloadingEnabled"
-      ),
-      scalacOptions := Seq(
-        "-feature",
-        "-deprecation",
-        "-Ypartial-unification"
       )
     ))
   }
@@ -28,8 +22,6 @@ object Settings {
   )
 
   val withTesting = Seq(
-    parallelExecution in Test := false,
-    fork in Test := true,
     testOptions in Test += Tests.Argument(TestFrameworks.ScalaTest, "-oD")
   )
 
@@ -50,10 +42,8 @@ object Settings {
       }
     },
     imageNames in docker := Seq(
-      // Sets the latest tag
       ImageName(s"${organization.value}/${name.value}:latest"),
 
-      // Sets a name with a tag that contains the project version
       ImageName(
         namespace = Some(organization.value),
         repository = name.value,

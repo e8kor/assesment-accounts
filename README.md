@@ -41,7 +41,9 @@ Default http port used in application: 4140. Updated `application.conf` in order
 Application can started by:
  * **RECOMMENDED** `sbt assembly` and `java -jar app.jar`. Latest assembled version of application are in root of repository
  * `sbt docker` and `cd deployment; docker-compose up`
- * `sbt run`, may have potential issues with applying migrations
+ * **SIMPLEST** `sbt run`, may have potential issues with applying migrations **resolved with sbt version 1.1.0**
+
+  Issue log output:
   ```
   2018-10-19 09:31:19 [scala-execution-context-global-93] WARN  o.f.c.i.u.s.c.ClassPathScanner - Unable to resolve location classpath:db/migration
   ```
