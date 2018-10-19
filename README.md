@@ -1,4 +1,4 @@
-# Accounts API
+# Accounting API
 Application provide RESTful API for inserting transactions related to account and accessing its balance.
 
 ## Design
